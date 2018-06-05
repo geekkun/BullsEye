@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     var targetVal = 0
     var score = 0
     var round = 1
+    
+     @IBAction func reset (){
+        score = 0
+        round = 1
+        startRound()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +53,13 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: "Hello, world!", message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {action in self.startRound()})
         
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
         
-        startRound()
+//        startRound()
     }
     
     
